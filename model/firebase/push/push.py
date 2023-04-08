@@ -13,7 +13,7 @@ def pushToFirebase(data, collection, document, objectName):
 
     if objectName.length == 1:
         obj = {
-            f'{objectName[0]}': data[0],
+            f'{objectName[0]}': data,
             }
     else:
         obj = {
