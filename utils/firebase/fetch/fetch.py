@@ -15,3 +15,14 @@ def fetchFromFirebase(collection, document):
     doc = doc_ref.get().to_dict()
 
     return doc
+
+#usage
+# ans = fetchFromFirebase('your collection name', 'your document name')
+#    ans= {
+#         "new" : your array,
+#         "old" : your array,
+#     }
+
+#     arr = ans['new']
+#     arr = ans['old']
+

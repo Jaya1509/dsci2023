@@ -22,3 +22,17 @@ def pushToFirebase(data, collection, document, objectName):
         }
 
     db_ref = db.collection(u'%s'%(collection)).document(u'%s'%(document)).set(obj)
+
+#usage
+# data [1,2] >> dist history
+# or
+# data = [[1,2],[3,4]] >> dist
+
+# objectname >history >> distance
+# objectname >dist >> ["new" ,"old"]
+
+
+# history [1,2,3]
+# new varible 3
+
+# fetch history > add new varible to the list > push to back  firebase
