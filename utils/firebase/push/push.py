@@ -5,13 +5,13 @@ from firebase_admin import firestore
 
 def pushToFirebase(data, collection, document, objectName):
     # Use a service account.
-    cred = credentials.Certificate('../secret/dsci2023-firebase-adminsdk-t47pf-555db158e8.json')
+    cred = credentials.Certificate('utils/firebase/secret/dsci2023-firebase-adminsdk-t47pf-555db158e8.json')
 
     app = firebase_admin.initialize_app(cred)
 
     db = firestore.client()
 
-    if objectName.length == 1:
+    if len(objectName) == 1:
         obj = {
             f'{objectName[0]}': data,
             }
