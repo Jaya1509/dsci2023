@@ -334,8 +334,8 @@ class FlowerClient(fl.client.NumPyClient):
         self.iteration += 1
         self.distances_history.append(np.mean(self.distances))
         print(self.distances_history)
-        prev_distance_history = fetchFromFirebase('distance', 'distance_history')
-        new_distance_history = prev_distance_history['distance_history'].append(self.distances_history[0])
+        new_distance_history = fetchFromFirebase('distance', 'distance_history')
+        new_distance_history['distance_history'].append(self.distances_history[0])
         pushToFirebase(new_distance_history,'distance', 'distance_history',['distance_history'])      
         # AT this point I have both the numpy array and the list which is required to be stored
         
