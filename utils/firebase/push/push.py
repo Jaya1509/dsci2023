@@ -7,7 +7,12 @@ def pushToFirebase(data, collection, document, objectName):
     # Use a service account.
     cred = credentials.Certificate('utils/firebase/secret/dsci2023-firebase-adminsdk-t47pf-555db158e8.json')
 
-    app = firebase_admin.initialize_app(cred)
+    if data is None:
+        print("data is None")
+        return
+
+    if not firebase_admin._apps:
+        app = firebase_admin.initialize_app(cred)
 
     db = firestore.client()
 
