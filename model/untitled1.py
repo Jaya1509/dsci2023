@@ -69,8 +69,9 @@ from typing import List, Tuple
 import flwr as fl
 from flwr.common import Metrics
 
-from ..utils.firebase.fetch import fetchFromFirebase
-from ..utils.firebase.push import pushToFirebase
+from utils.firebase.fetch import fetchFromFirebase as fetch
+from utils.firebase.push import pushToFirebase as push
+# import according to your directory, dont copy paste this
 
 DEVICE = torch.device("cpu")  # Try "cuda" to train on GPU
 print(
@@ -334,11 +335,9 @@ class FlowerClient(fl.client.NumPyClient):
         self.iteration += 1
         self.distances_history.append(np.mean(self.distances))
         print(self.distances_history)
-        new_distance_history = fetchFromFirebase('distance', 'distance_history')
-        new_distance_history['distance_history'].append(self.distances_history[0])
-        pushToFirebase(new_distance_history,'distance', 'distance_history',['distance_history'])      
-        # AT this point I have both the numpy array and the list which is required to be stored
-        
+
+        #pushing to firestore
+        push.pushToFirebase(self.distances_history[0],'distance', 'distance_history', ['distance_history'])
 
         return get_parameters(self.net), len(self.trainloader), {}
 

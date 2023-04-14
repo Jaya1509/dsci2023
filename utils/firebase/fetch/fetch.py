@@ -17,13 +17,3 @@ def fetchFromFirebase(collection, document):
 
     return doc
 
-#usage
-# ans = fetchFromFirebase('your collection name', 'your document name')
-#    ans= {
-#         "new" : your array,
-#         "old" : your array,
-#     }
-
-#     arr = ans['new']
-#     arr = ans['old']
-
