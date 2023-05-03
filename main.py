@@ -1,4 +1,5 @@
 import logging
+import os
 
 import uvicorn
 import secrets
@@ -134,6 +135,7 @@ async def adminBaseUpload(request: Request, token: str):
         if status:
             # code doing averaging of models called here
             await cleanFolder()
+            os.system('touch temp_models/readme.md')
             return {'message': 'Downloaded successfully'}
         else:
             return {'message': message}

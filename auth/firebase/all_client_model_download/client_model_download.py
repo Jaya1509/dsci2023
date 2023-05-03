@@ -19,6 +19,7 @@ async def downloadClientModels():
 
         all_files = storage.list_files()
         all_files = [file for file in all_files if 'client_model' in file.name]
+        await cleanFolder()
         print(all_files)
         for file in all_files:
             file_name = file.name.split('/')[1]
