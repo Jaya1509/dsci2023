@@ -38,12 +38,12 @@ jobs:
     #   run: |
     #     rm saved_model/final_model.h5
     #     python model__prediction_and_evaluation/model.py
-    - name: Authorizing to push changes
-      uses: ad-m/github-push-action@main
-      with:
-        github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        branch: ${{ github.head_ref || github.ref_name }}
-        directory: .
+    # - name: Authorizing to push changes
+    #   uses: ad-m/github-push-action@main
+    #   with:
+    #     github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+    #     branch: ${{ github.head_ref || github.ref_name }}
+    #     directory: .
     # - name: Commit and Push back to GitHub Repo
     #   if: github.ref != 'refs/heads/master'
     #   run: |
