@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Details</title>
+    <link rel="stylesheet" href="../static/style.css">
+  </head>
+  <body>
+    <div class="center">
+      <h4> Login Details</h4>
+      <br>
+      <h6> Update: {{value1}}</h6>
+      <br>
+      <h4> Logged in for Email : {{email}}</h4>
+      <br>
+      <form action="/prediction" method="get">
+        <div class="signup_link">
+          Predict? <input type="submit" value="Predict!">
+        </div>
+      </form>
+      <form action="http://rb.gy/mxpzt" method="get">
+        <div class="signup_link">
+          Download Base Model? <input type="submit" value="Download Base Model!">
+        </div>
+      </form>
+      <form action="/upload-updated-model" method="get">
+        <div class="signup_link">
+          Upload Updated Model?<input type="submit" value="Upload Updated Model!">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
