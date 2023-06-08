@@ -22,8 +22,7 @@ async def uploadClientModel(email: str, idToken: str, file: UploadFile):
             "serviceAccount": "auth/firebase/secret/client-service.json",
             }
             
-            if not pyrebase._apps:
-                firebase_storage = pyrebase.initialize_app(config)
+            firebase_storage = pyrebase.initialize_app(config)
 
             storage = firebase_storage.storage()
 

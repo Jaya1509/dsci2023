@@ -13,8 +13,7 @@ async def downloadClientModels():
         "serviceAccount": "auth/firebase/secret/dsci2023-firebase-adminsdk-t47pf-555db158e8.json",
         }
 
-        if not pyrebase._apps:
-            firebase_storage = pyrebase.initialize_app(config)
+        firebase_storage = pyrebase.initialize_app(config)
 
         storage = firebase_storage.storage()
 
