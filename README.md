@@ -1,4 +1,5 @@
 # dsci2023
+Complete User Manual: https://www.canva.com/design/DAFmDli4nHY/Rwan4qkL5C2HvekXVZ7_tQ/edit?utm_content=DAFmDli4nHY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 always remove tensorflow-intel from requirements.txt before pushing code
 
